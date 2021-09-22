@@ -1,0 +1,222 @@
+C:\Users\Chears\Documents\Proyectos\Games\Experiments\nakama demo\nakama>docker-
+compose up
+nakama_cockroachdb_1 is up-to-date
+nakama_prometheus_1 is up-to-date
+nakama_nakama_1 is up-to-date
+Attaching to nakama_cockroachdb_1, nakama_prometheus_1, nakama_nakama_1
+cockroachdb_1  | *
+cockroachdb_1  | * WARNING: ALL SECURITY CONTROLS HAVE BEEN DISABLED!
+cockroachdb_1  | *
+cockroachdb_1  | * This mode is intended for non-production testing only.
+cockroachdb_1  | *
+cockroachdb_1  | * In this mode:
+cockroachdb_1  | * - Your cluster is open to any client that can access any of y
+our IP addresses.
+cockroachdb_1  | * - Intruders with access to your machine or network can observ
+e client-server traffic.
+cockroachdb_1  | * - Intruders can log in without password and read or write any
+ data in the cluster.
+cockroachdb_1  | * - Intruders can consume all your server's resources and cause
+ unavailability.
+cockroachdb_1  | *
+cockroachdb_1  | *
+cockroachdb_1  | * INFO: To start a secure server without mandating TLS for clie
+nts,
+cockroachdb_1  | * consider --accept-sql-without-tls instead. For other options,
+ see:
+cockroachdb_1  | *
+cockroachdb_1  | * - https://go.crdb.dev/issue-v/53404/v20.2
+cockroachdb_1  | * - https://www.cockroachlabs.com/docs/v20.2/secure-a-cluster.h
+tml
+cockroachdb_1  | *
+cockroachdb_1  | *
+cockroachdb_1  | * WARNING: neither --listen-addr nor --advertise-addr was speci
+fied.
+cockroachdb_1  | * The server will advertise "7b4e34166fed" to other nodes, is t
+his routable?
+cockroachdb_1  | *
+cockroachdb_1  | * Consider using:
+cockroachdb_1  | * - for local-only servers:  --listen-addr=localhost
+cockroachdb_1  | * - for multi-node clusters: --advertise-addr=<host/IP addr>
+prometheus_1   | level=info ts=2021-09-22T17:59:43.980Z caller=main.go:400 msg="
+No time or size retention was set so using the default time retention" duration=
+15d
+prometheus_1   | level=info ts=2021-09-22T17:59:43.985Z caller=main.go:438 msg="
+Starting Prometheus" version="(version=2.30.0, branch=HEAD, revision=37468d88dce
+85ac507f3fb7864c7d1c078e3e27d)"
+prometheus_1   | level=info ts=2021-09-22T17:59:43.986Z caller=main.go:443 build
+_context="(go=go1.17.1, user=root@e913c65aa170, date=20210914-09:49:24)"
+prometheus_1   | level=info ts=2021-09-22T17:59:43.990Z caller=main.go:444 host_
+details="(Linux 4.19.130-boot2docker #1 SMP Mon Jun 29 23:52:55 UTC 2020 x86_64
+2407e3770522 (none))"
+prometheus_1   | level=info ts=2021-09-22T17:59:43.991Z caller=main.go:445 fd_li
+mits="(soft=1048576, hard=1048576)"
+prometheus_1   | level=info ts=2021-09-22T17:59:43.992Z caller=main.go:446 vm_li
+mits="(soft=unlimited, hard=unlimited)"
+cockroachdb_1  | *
+cockroachdb_1  | *
+cockroachdb_1  | *
+prometheus_1   | level=info ts=2021-09-22T17:59:44.109Z caller=web.go:541 compon
+ent=web msg="Start listening for connections" address=0.0.0.0:9090
+prometheus_1   | level=info ts=2021-09-22T17:59:44.129Z caller=main.go:822 msg="
+Starting TSDB ..."
+prometheus_1   | level=info ts=2021-09-22T17:59:44.163Z caller=tls_config.go:191
+ component=web msg="TLS is disabled." http2=false
+prometheus_1   | level=info ts=2021-09-22T17:59:44.187Z caller=head.go:466 compo
+nent=tsdb msg="Replaying on-disk memory mappable chunks if any"
+prometheus_1   | level=info ts=2021-09-22T17:59:44.188Z caller=head.go:500 compo
+nent=tsdb msg="On-disk memory mappable chunks replay completed" duration=22.645µ
+s
+cockroachdb_1  | * INFO: Replication was disabled for this cluster.
+cockroachdb_1  | * When/if adding nodes in the future, update zone configuration
+s to increase the replication factor.
+cockroachdb_1  | *
+prometheus_1   | level=info ts=2021-09-22T17:59:44.190Z caller=head.go:506 compo
+nent=tsdb msg="Replaying WAL, this may take a while"
+prometheus_1   | level=info ts=2021-09-22T17:59:44.194Z caller=head.go:577 compo
+nent=tsdb msg="WAL segment loaded" segment=0 maxSegment=0
+prometheus_1   | level=info ts=2021-09-22T17:59:44.197Z caller=head.go:583 compo
+nent=tsdb msg="WAL replay completed" checkpoint_replay_duration=3.064297ms wal_r
+eplay_duration=3.154503ms total_replay_duration=8.635912ms
+cockroachdb_1  | CockroachDB node starting at 2021-09-22 17:59:46.432892513 +000
+0 UTC (took 1.8s)
+cockroachdb_1  | build:               CCL v20.2.16 @ 2021/09/13 14:13:55 (go1.13
+.14)
+cockroachdb_1  | webui:               http://7b4e34166fed:8080
+cockroachdb_1  | sql:                 postgresql://root@7b4e34166fed:26257?sslmo
+de=disable
+cockroachdb_1  | RPC client flags:    /cockroach/cockroach <client cmd> --host=7
+b4e34166fed:26257 --insecure
+cockroachdb_1  | logs:                /var/lib/cockroach/logs
+prometheus_1   | level=info ts=2021-09-22T17:59:44.208Z caller=main.go:849 fs_ty
+pe=EXT4_SUPER_MAGIC
+prometheus_1   | level=info ts=2021-09-22T17:59:44.211Z caller=main.go:852 msg="
+TSDB started"
+prometheus_1   | level=info ts=2021-09-22T17:59:44.214Z caller=main.go:979 msg="
+Loading configuration file" filename=./prometheus.yml
+prometheus_1   | level=info ts=2021-09-22T17:59:44.222Z caller=main.go:1016 msg=
+"Completed loading of configuration file" filename=./prometheus.yml totalDuratio
+n=8.673929ms db_storage=2.868µs remote_storage=3.06µs web_handler=1.008µs query_
+engine=2.256µs scrape=4.504161ms scrape_sd=1.511721ms notify=3.324µs notify_sd=1
+5.54µs rules=3.456µs
+prometheus_1   | level=info ts=2021-09-22T17:59:44.224Z caller=main.go:794 msg="
+Server is ready to receive web requests."
+cockroachdb_1  | temp dir:            /var/lib/cockroach/cockroach-temp318256899
+
+cockroachdb_1  | external I/O path:   /var/lib/cockroach/extern
+cockroachdb_1  | store[0]:            path=/var/lib/cockroach,attrs=ssd
+cockroachdb_1  | storage engine:      pebble
+cockroachdb_1  | status:              initialized new cluster
+cockroachdb_1  | clusterID:           60d09ac7-5394-4cd7-9cca-1dd801f9ed2c
+cockroachdb_1  | nodeID:              1
+nakama_1       | + /nakama/nakama migrate up --database.address root@cockroachdb
+:26257
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:45.471Z","caller":"migra
+te/migrate.go:174","msg":"Database connection","dsn":"postgresql://root@cockroac
+hdb:26257?sslmode=disable"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:46.460Z","caller":"migra
+te/migrate.go:189","msg":"Database information","version":"CockroachDB CCL v20.2
+.16 (x86_64-unknown-linux-gnu, built 2021/09/13 14:13:55, go1.13.14)"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:46.495Z","caller":"migra
+te/migrate.go:198","msg":"Creating new database","name":"nakama"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:54.986Z","caller":"migra
+te/migrate.go:227","msg":"Successfully applied migration","count":6}
+nakama_1       | + exec /nakama/nakama --name nakama1 --database.address root@co
+ckroachdb:26257 --logger.level DEBUG --session.token_expiry_sec 7200 --metrics.p
+rometheus_port 9100
+nakama_1       | {"level":"warn","ts":"2021-09-22T17:59:55.072Z","caller":"serve
+r/config.go:294","msg":"WARNING: insecure default parameter value, change this f
+or production!","param":"console.username"}
+nakama_1       | {"level":"warn","ts":"2021-09-22T17:59:55.074Z","caller":"serve
+r/config.go:298","msg":"WARNING: insecure default parameter value, change this f
+or production!","param":"console.password"}
+nakama_1       | {"level":"warn","ts":"2021-09-22T17:59:55.077Z","caller":"serve
+r/config.go:302","msg":"WARNING: insecure default parameter value, change this f
+or production!","param":"console.signing_key"}
+nakama_1       | {"level":"warn","ts":"2021-09-22T17:59:55.084Z","caller":"serve
+r/config.go:306","msg":"WARNING: insecure default parameter value, change this f
+or production!","param":"socket.server_key"}
+nakama_1       | {"level":"warn","ts":"2021-09-22T17:59:55.090Z","caller":"serve
+r/config.go:310","msg":"WARNING: insecure default parameter value, change this f
+or production!","param":"session.encryption_key"}
+nakama_1       | {"level":"warn","ts":"2021-09-22T17:59:55.092Z","caller":"serve
+r/config.go:314","msg":"WARNING: insecure default parameter value, change this f
+or production!","param":"session.refresh_encryption_key"}
+nakama_1       | {"level":"warn","ts":"2021-09-22T17:59:55.096Z","caller":"serve
+r/config.go:318","msg":"WARNING: insecure default parameter value, change this f
+or production!","param":"runtime.http_key"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.098Z","caller":"main.
+go:104","msg":"Nakama starting"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.100Z","caller":"main.
+go:105","msg":"Node","name":"nakama1","version":"3.2.1+6790d453","runtime":"go1.
+16.3","cpu":1,"proc":1}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.100Z","caller":"main.
+go:106","msg":"Data directory","path":"/nakama/data"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.101Z","caller":"main.
+go:117","msg":"Database connections","dsns":["root@cockroachdb:26257"]}
+nakama_1       | {"level":"debug","ts":"2021-09-22T17:59:55.105Z","caller":"main
+.go:250","msg":"Complete database connection URL","raw_url":"postgresql://root@c
+ockroachdb:26257/nakama?sslmode=disable"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.244Z","caller":"main.
+go:120","msg":"Database information","version":"CockroachDB CCL v20.2.16 (x86_64
+-unknown-linux-gnu, built 2021/09/13 14:13:55, go1.13.14)"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.323Z","caller":"serve
+r/metrics.go:132","msg":"Starting Prometheus server for metrics requests","port"
+:9100}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.388Z","caller":"serve
+r/leaderboard_rank_cache.go:118","msg":"Initializing leaderboard rank cache"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.391Z","caller":"serve
+r/runtime.go:568","msg":"Initialising runtime","path":"/nakama/data/modules"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.397Z","caller":"serve
+r/runtime.go:575","msg":"Initialising runtime event queue processor"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.395Z","caller":"serve
+r/leaderboard_rank_cache.go:216","msg":"Leaderboard rank cache initialization co
+mpleted successfully","cached":[],"skipped":[]}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.401Z","caller":"serve
+r/runtime.go:577","msg":"Runtime event queue processor started","size":65536,"wo
+rkers":8}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.415Z","caller":"serve
+r/runtime_go.go:2248","msg":"Initialising Go runtime provider","path":"/nakama/d
+ata/modules"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.418Z","caller":"serve
+r/runtime_go.go:2272","msg":"Go runtime modules loaded"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.423Z","caller":"serve
+r/runtime_lua.go:112","msg":"Initialising Lua runtime provider","path":"/nakama/
+data/modules"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.435Z","caller":"serve
+r/runtime_lua.go:1082","msg":"Lua runtime modules loaded"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.443Z","caller":"serve
+r/runtime_lua.go:1085","msg":"Allocating minimum runtime pool","count":16}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.447Z","caller":"serve
+r/runtime_lua.go:1093","msg":"Allocated minimum runtime pool"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.450Z","caller":"serve
+r/runtime_javascript.go:524","msg":"Initialising JavaScript runtime provider","p
+ath":"/nakama/data/modules","entrypoint":""}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.456Z","caller":"serve
+r/runtime_javascript.go:1466","msg":"JavaScript runtime modules loaded"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.471Z","caller":"serve
+r/runtime_javascript.go:1469","msg":"Allocating minimum JavaScript runtime pool"
+,"count":16}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.476Z","caller":"serve
+r/runtime_javascript.go:1477","msg":"Allocated minimum JavaScript runtime pool"}
+
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.478Z","caller":"serve
+r/runtime.go:610","msg":"Found runtime modules","count":0,"modules":[]}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.481Z","caller":"serve
+r/leaderboard_scheduler.go:91","msg":"Leaderboard scheduler start"}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.490Z","caller":"serve
+r/leaderboard_scheduler.go:278","msg":"Leaderboard scheduler update","end_active
+":"-1ns","end_active_count":0,"expiry":"-1ns","expiry_count":0}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.504Z","caller":"serve
+r/api.go:128","msg":"Starting API server for gRPC requests","port":7349}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.509Z","caller":"serve
+r/api.go:262","msg":"Starting API server gateway for HTTP requests","port":7350}
+
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.702Z","caller":"serve
+r/console.go:130","msg":"Starting Console server for gRPC requests","port":7348}
+
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:55.712Z","caller":"serve
+r/console.go:223","msg":"Starting Console server gateway for HTTP requests","por
+t":7351}
+nakama_1       | {"level":"info","ts":"2021-09-22T17:59:56.563Z","caller":"main.
+go:174","msg":"Startup done"}
